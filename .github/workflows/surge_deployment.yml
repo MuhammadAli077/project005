@@ -38,4 +38,4 @@ jobs:
        run:  npm install --globall surge
        
     - name: deploy to surge
-      run:  surge ./build project005-ali.surge.su ${{ secrets.SURGE_TOKEN }}
+      run:  surge ./build project005-muhammadali.surge.su ${{ secrets.SURGE_TOKEN }}
