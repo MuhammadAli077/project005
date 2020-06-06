@@ -39,4 +39,3 @@ jobs:
        
     - name: deploy to surge
       run:  surge ./build project005-ali.surge.su ${{ secrets.SURGE_TOKEN }}
-       
