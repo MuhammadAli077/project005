@@ -26,10 +26,9 @@ jobs:
     - uses: actions/setup-note@v2-beta
       with:
            node-version: 12
-           
-    - name:   Install Yarn
-    - uses: borales/actions-yarn@v2.0.0
+    - uses: actions/setup-note@v2-beta
       with:
+           
        cmd: install # will run `yarn install` command
        
     - name: Build React App
