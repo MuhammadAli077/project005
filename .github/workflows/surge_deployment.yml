@@ -7,8 +7,7 @@ name: React App Deploy TO Surge
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,21 +20,17 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      
-    - name: Install NodeJS
+    - name: Set up Node.js environment
     - uses: actions/setup-note@v2-beta
       with:
            node-version: 12
+    - name: Github Action for yarn
     - uses: actions/setup-note@v2-beta
       with:
-           
        cmd: install # will run `yarn install` command
-       
-    - name: Build React App
+    - name: creating Build 
       run: yarn build
-      
     -  name: Install surge
        run:  npm install -g surge
-       
-    - name: deploy to surge
+    - name: deploying on  surge
       run:  surge ./build project005-muhammadali.surge.sh ${{ secrets.SURGE_TOKEN }}
